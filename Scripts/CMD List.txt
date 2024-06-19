@@ -1,0 +1,39 @@
+/api/auth/users
+    - GET: Retrieve user info (Auth required)
+    - POST: Register new user
+/api/auth/token/login/
+    - POST: Get auth token
+/api/auth/users/me
+    - GET: Display user info (Auth required)
+/api/menu-items
+    - GET: List menu items (Pagination, search, ordering)
+    - POST: Create menu item (Superuser)
+/api/menu-items/category
+    - GET: List categories (Superuser)
+    - POST: Add category (Superuser)
+/api/menu-items/{id}
+    - GET: Get menu item details
+    - PATCH: Toggle featured status (Manager, Superuser)
+    - DELETE: Delete menu item (Superuser)
+/api/groups/managers/users
+    - GET: List manager users (Manager, Superuser)
+    - POST: Add user to managers (Manager, Superuser)
+/api/groups/managers/users/{id}
+    - DELETE: Remove user from managers (Manager, Superuser)
+/api/groups/delivery-crew/users
+    - GET: List delivery crew users (Manager, Superuser)
+    - POST: Add user to delivery crew (Manager, Superuser)
+/api/groups/delivery-crew/users/{id}
+    - DELETE: Remove user from delivery crew (Manager, Superuser)
+/api/cart/menu-items
+    - GET: Get user's cart (User)
+    - POST: Add to user's cart (User)
+    - DELETE: Remove from/clear user's cart (User)
+/api/orders
+    - GET: List orders (User, Delivery, Manager, Superuser)
+    - POST: Place order (User)
+/api/orders/{id}
+    - GET: Get order details (User for owned, others for all)
+    - PATCH: Toggle order status (Delivery, Manager, Superuser)
+    - PUT: Assign delivery crew (Manager, Superuser)
+    - DELETE: Delete order (Manager, Superuser)
